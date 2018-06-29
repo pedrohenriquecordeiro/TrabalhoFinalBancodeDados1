@@ -84,7 +84,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel3)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +103,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(356, 155));
+        setSize(new java.awt.Dimension(349, 155));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
