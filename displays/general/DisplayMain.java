@@ -273,8 +273,9 @@ public class DisplayMain extends javax.swing.JFrame {
         DefaultTableModel defaultTableModel = (DefaultTableModel) jTableClients.getModel();
         int row = jTableClients.getSelectedRow();
         if (row != -1) {
-            // at column 0 we have a client object
+            // se tiver um linha da tabela selecionada entao ...
             Client client = (Client) jTableClients.getModel().getValueAt(row, 0);
+            //o objeto Client esta indexado na coluna 0
             DisplayConsultClient displayConsultClient = new DisplayConsultClient(client);
             displayConsultClient.setVisible(true);
         }
@@ -286,11 +287,11 @@ public class DisplayMain extends javax.swing.JFrame {
             DefaultTableModel defaultTableModel = (DefaultTableModel) jTableClients.getModel();
             int row = jTableClients.getSelectedRow();
             if (row != -1) {
-                // at column 0 we have a client object
+                //o objeto Client esta indexado na coluna 0
                 Client client = (Client) jTableClients.getModel().getValueAt(row, 0);
                 defaultTableModel.removeRow(row);
                 try {
-                    //now we can delete the specific client
+                    //podemos então deletar o cliente selecionado no banco
                     if(ClientDAO.delete(client)){
                         JOptionPane.showMessageDialog(null, "Delete sucess!","",JOptionPane.INFORMATION_MESSAGE);
                     }else{
