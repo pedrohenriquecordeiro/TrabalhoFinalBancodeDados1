@@ -1,11 +1,13 @@
+create database estudio;
+
 create table client(
 	iduser serial,
 	primary key(iduser),
 	nm varchar(50) not null,
 	tel varchar(15),
 	age integer,
-	next_session date,
-	local_picture varchar(150),
+	next_session varchar(15) not null,
+	local_picture varchar(300),
 	idartist_fk integer not null,
 	foreign key (idartist_fk) references tattoo_artist (idartist) on delete cascade on update cascade 
 );
@@ -22,12 +24,15 @@ create table tattoo_artist(
 	primary key(idartist),
 	nm varchar(50) not null,
 	tel varchar(15),
-	login varchar(30),
-	passw varchar(30)
+	login varchar(30) unique,
+	passw varchar(30) unique
 );
 
-insert into tattoo_artist(idartist,nm,tel,login,passw)
-values (1,'manuel','992187673','t1','123');
+insert into tattoo_artist(nm,tel,login,passw)
+values ('administrador','992187673','admin','admin');
+
+insert into tattoo_artist(nm,tel,login,passw)
+values ('manuel','992187673','t1','123');
 
 update tattoo_artist set nome='Manuel' where iduser = 1;
 

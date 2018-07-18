@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package database;
+package connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -21,7 +21,7 @@ public class ConnectionModel {
         String password = "1308";
         Class.forName("org.postgresql.Driver");
 	java.sql.Connection connection = DriverManager.getConnection("jdbc:postgresql://"
-				+ "localhost:5432/postgres" , namebd , password);
+				+ "localhost:5432/estudio" , namebd , password);
         
         return connection;
     }
